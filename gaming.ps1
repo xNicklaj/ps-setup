@@ -44,33 +44,12 @@ function listPackages($arr) {
 	}
 }
 
-$editor = @('vscode', 'neovim')
-$webdev = @('nodejs', 'yarn', 'bitnami-xampp', 'nginx')
-$database = @('mariadb', 'mongodb')
-$javadev = @('openjdk', 'openjdk8')
-$desktopdev = @('mingw', 'rust', 'rustup')
-$androiddev = @('androidstudio', 'koktlinc', 'flutter', 'dark-sdk')
-$tool = @('docker-desktop')
-$versioncontrol = @('git', 'github-desktop')
+$platforms = @('steam', 'uplay', 'epicgameslauncher', 'goggalaxy', 'origin')
 
 Write-Host "The following packages will be installed: "
 
-Write-Host "--- Editors ---"
-listPackages($editor)
-Write-Host "--- Web ---"
-listPackages($webdev)
-Write-Host "--- Databases ---"
-listPackages($database)
-Write-Host "--- Java ---"
-listPackages($javadev)
-Write-Host "--- Desktop ---"
-listPackages($desktopdev)
-Write-Host "--- Android ---"
-listPackages($androiddev)
-Write-Host "--- Tools ---"
-listPackages($tool)
-Write-Host "--- Version Control ---"
-listPackages($versioncontrol)
+Write-Host "--- Platforms ---"
+listPackages($platforms)
 
 do {
 	$mode = Read-Host -Prompt "Select whether you want to perform an [A]utomated or a [m]anual installation"
@@ -79,23 +58,11 @@ do {
 	}
 } while(($mode.ToLower() -ne "A") -and ($mode.ToLower() -ne "M"))
 
-Write-Host "--- Editors ---"
-chocoInstall($editor)
-Write-Host "--- Web ---"
-chocoInstall($webdev)
-Write-Host "--- Databases ---"
-chocoInstall($database)
-Write-Host "--- Java ---"
-chocoInstall($javadev)
-Write-Host "--- Desktop ---"
-chocoInstall($desktopdev)
-Write-Host "--- Android ---"
-chocoInstall($androiddev)
-Write-Host "--- Tools ---"
-chocoInstall($tool)
-Write-Host "--- Version Control ---"
-chocoInstall($versioncontrol)
-
 Write-Host "Installation finished."
+Write-Host "--- Platforms ---"
+chocoInstall($platforms)
+
+
+
 Write-Host "Press any key to continue ....."
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

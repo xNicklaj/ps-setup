@@ -32,6 +32,5 @@ If ((Get-WmiObject Win32_Processor).name | Select-String -Pattern 'INTEL'){
 }
 
 Write-Host "Installation finished."
-
 Write-Host "Press any key to continue ....."
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

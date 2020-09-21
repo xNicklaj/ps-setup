@@ -49,7 +49,7 @@ $webdev = @('nodejs', 'yarn', 'bitnami-xampp', 'nginx')
 $database = @('mariadb', 'mongodb')
 $javadev = @('openjdk', 'openjdk8')
 $desktopdev = @('mingw', 'rust', 'rustup')
-$androiddev = @('androidstudio', 'koktlinc', 'flutter', 'dark-sdk')
+$androiddev = @('androidstudio', 'koktlinc', 'flutter', 'dart-sdk')
 $tool = @('docker-desktop')
 $versioncontrol = @('git', 'github-desktop')
 
